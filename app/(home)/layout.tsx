@@ -36,7 +36,8 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: "/images/hero/hero-1.jpg",
+        // Place your share image at: public/og.jpg (recommended 1200×630)
+        url: "/og.jpg",
         width: 1200,
         height: 630,
         alt: "Biospark scientists developing climate-resilient biogas technology",
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/images/hero/hero-1.jpg"],
+    images: ["/og.jpg"],
   },
   robots: {
     index: true,

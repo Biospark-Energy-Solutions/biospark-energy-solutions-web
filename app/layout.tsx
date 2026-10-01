@@ -26,8 +26,15 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "BioSpark Energy Solutions",
-  description: "BioSpark Energy Solutions",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+  ),
+  title: {
+    default: "Biospark Energy Solutions",
+    template: "%s | Biospark Energy Solutions",
+  },
+  description:
+    "Biospark converts organic waste into clean biogas and nutrient-rich biofertilizer.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
