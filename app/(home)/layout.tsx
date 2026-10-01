@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     images: [
       {
         // Place your share image at: public/og.jpg (recommended 1200×630)
-        url: "/og.jpg",
+        url: "https://afritint-media.s3.eu-north-1.amazonaws.com/versions/original/8ce90889-725d-422f-ba47-925a2c36c251_biospark.jpeg",
         width: 1200,
         height: 630,
         alt: "Biospark scientists developing climate-resilient biogas technology",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/og.jpg"],
+    images: ["https://afritint-media.s3.eu-north-1.amazonaws.com/versions/original/8ce90889-725d-422f-ba47-925a2c36c251_biospark.jpeg"],
   },
   robots: {
     index: true,
