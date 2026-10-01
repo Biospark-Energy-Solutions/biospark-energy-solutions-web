@@ -169,7 +169,7 @@ export function HeroCarousel() {
         }}
       />
 
-      <Box className="relative z-10 flex min-h-svh w-full flex-col justify-end px-5 pb-28 pt-28 sm:px-8 md:justify-center md:px-12 md:pb-28 lg:px-16 xl:px-20">
+      <Box className="relative z-10 flex min-h-svh w-full flex-col justify-start px-5 pb-28 pt-28 sm:px-8 md:justify-center md:px-12 md:pb-28 lg:px-16 xl:px-20">
         <Stack
           key={animKey}
           gap="md"
