@@ -94,27 +94,7 @@ export function Navbar() {
             </Group>
 
             <Group gap="sm" wrap="nowrap" className="shrink-0">
-              <Button
-                component={Link}
-                href="/#contact"
-                size="sm"
-                radius="xl"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #FF6600 0%, #FF9F43 100%)",
-                  border: "none",
-                  color: "white",
-                  fontWeight: 600,
-                  letterSpacing: "-0.3px",
-                  padding: "8px 24px",
-                  height: 36,
-                  boxShadow: "0 4px 14px rgba(255, 102, 0, 0.35)",
-                  transition: "transform 0.2s, box-shadow 0.2s",
-                }}
-                className="hover:-translate-y-px"
-              >
-                Get Started
-              </Button>
+            <></>
 
               <Burger
                 opened={opened}
@@ -161,7 +141,8 @@ export function Navbar() {
               {link.label}
             </Anchor>
           ))}
-          <Button
+          <></>
+          {/* <Button
             component={Link}
             href="/#contact"
             radius="xl"
@@ -176,7 +157,7 @@ export function Navbar() {
             }}
           >
             Get Started
-          </Button>
+          </Button> */}
         </Stack>
       </Drawer>
     </>

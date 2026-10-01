@@ -380,7 +380,7 @@ export default function Home() {
 
 					<Box className='relative aspect-[4/3] overflow-hidden rounded-[2rem]'>
 						<Image
-							src='/images/hero/hero-2.jpg'
+							src='/images/hero/hero-11.jpg'
 							alt='Biospark scientists working with cultures and a microscope in the lab'
 							fill
 							sizes='(max-width: 768px) 100vw, 50vw'

@@ -22,39 +22,40 @@ const SLIDES: HeroSlide[] = [
     description:
       "We have built a climate-resilient microbial consortium isolated from our local environment, designed to support reliable biogas production through changing weather conditions.",
     ctaLabel: "Explore our science",
-    ctaHref: "/innovation",
+    ctaHref: "/#innovation",
     image: "/images/hero/hero-1.jpg",
-    imageAlt: "Biospark scientists examining a culture sample in the lab",
+    imageAlt:
+      "Biospark scientists examining a culture sample and using a microscope in the lab",
   },
   {
-    eyebrow: "Clean cooking for every community",
-    title: "Energy that works where you live.",
+    eyebrow: "Clean cooking • Locally produced energy",
+    title: "Clean Fuel Made Locally",
     description:
-      "Our community gas hubs turn organic waste into affordable, reliable cooking fuel—reducing deforestation and cutting household energy costs across Nigeria.",
-    ctaLabel: "Explore our products",
-    ctaHref: "/products",
-    image: "/images/hero/hero-1.jpg",
-    imageAlt: "Biospark scientists examining a culture sample in the lab",
+      "We turn organic waste into clean biogas for cooking – providing a cleaner, locally produced alternative to firewood and charcoal.",
+    ctaLabel: "Explore our Solutions",
+    ctaHref: "/#solutions",
+    image: "/images/hero/hero-2.jpg",
+    imageAlt: "Blue flame on a Biospark biogas cooking stove",
   },
   {
-    eyebrow: "Local solutions, scalable impact",
-    title: "Find a hub near you.",
+    eyebrow: "Community energy • Local opportunity",
+    title: "Energy That Creates Opportunity",
     description:
-      "Locate Biospark community gas hubs across the country and connect households, schools, and small businesses to cleaner energy operations.",
-    ctaLabel: "Locate a gas hub",
-    ctaHref: "/#community-gas-hub-locator",
-    image: "/images/hero/hero-1.jpg",
-    imageAlt: "Biospark scientists examining a culture sample in the lab",
+      "Our community model combines clean energy with local training, maintenance and enterprise opportunities – creating value beyond the gas itself, driving adoption.",
+    ctaLabel: "Explore our Impact",
+    ctaHref: "/#impact",
+    image: "/images/hero/hero-3.jpg",
+    imageAlt: "Community members operating a Biospark gas hub",
   },
   {
-    eyebrow: "Science-backed sustainability",
-    title: "From lab to lasting change.",
+    eyebrow: "Smart monitoring • System performance",
+    title: "Smarter monitoring. Steadier performance.",
     description:
-      "Every system we deploy is grounded in applied microbiology—so communities get consistent biogas output while keeping carbon out of the atmosphere.",
-    ctaLabel: "See our solutions",
-    ctaHref: "/solutions",
-    image: "/images/hero/hero-1.jpg",
-    imageAlt: "Biospark scientists examining a culture sample in the lab",
+      "Our monitoring layer is designed to track key biodigester conditions and performance, helping operators identify problems early, improve reliability and plan maintenance before disruptions occur.",
+    ctaLabel: "Explore our service",
+    ctaHref: "/#innovation",
+    image: "/images/hero/hero-4.jpg",
+    imageAlt: "Biospark team maintaining a community biodigester system",
   },
 ];
 
@@ -132,38 +133,48 @@ export function HeroCarousel() {
       aria-roledescription="carousel"
       aria-label="Biospark highlights"
     >
-      {SLIDES.map((item, i) => (
-        <Box
-          key={item.title}
-          className="absolute inset-0 transition-opacity duration-700 ease-out"
-          style={{ opacity: i === index ? 1 : 0 }}
-          aria-hidden={i !== index}
-        >
-          <Image
-            src={item.image}
-            alt={item.imageAlt}
-            fill
-            priority={i === 0}
-            sizes="100vw"
-            className="object-cover object-[68%_center] md:object-center"
-          />
-        </Box>
-      ))}
+      {SLIDES.map((item, i) => {
+        const active = i === index;
+        return (
+          <Box
+            key={item.title}
+            className="absolute inset-0 overflow-hidden transition-opacity duration-700 ease-out"
+            style={{
+              opacity: active ? 1 : 0,
+              zIndex: active ? 1 : 0,
+            }}
+            aria-hidden={!active}
+          >
+            <Image
+              src={item.image}
+              alt={item.imageAlt}
+              fill
+              priority={i === 0}
+              sizes="100vw"
+              className={`object-cover object-[68%_center] md:object-center ${
+                active
+                  ? "animate-[heroSlideIn_900ms_ease-out]"
+                  : "scale-105"
+              }`}
+            />
+          </Box>
+        );
+      })}
 
       <Box
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-0 z-[2]"
         style={{
           background:
-            "linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.75) 28%, rgba(0,0,0,0.55) 42%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0) 58%)",
+            "linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.82) 26%, rgba(0,0,0,0.62) 42%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0) 82%)",
         }}
       />
 
-      <Box className="relative z-10 flex min-h-svh w-full flex-col justify-end px-5 pb-8 pt-28 sm:px-8 md:justify-center md:px-12 md:pb-12 lg:px-16 xl:px-20">
+      <Box className="relative z-10 flex min-h-svh w-full flex-col justify-end px-5 pb-28 pt-28 sm:px-8 md:justify-center md:px-12 md:pb-28 lg:px-16 xl:px-20">
         <Stack
           key={animKey}
           gap="md"
           maw={560}
-          className="animate-[heroFade_600ms_ease-out]"
+          className="animate-[heroFade_700ms_ease-out]"
         >
           <Text
             tt="uppercase"
@@ -214,35 +225,39 @@ export function HeroCarousel() {
             </span>
           </Anchor>
         </Stack>
-
-        <Group justify="space-between" align="center" className="mt-16 w-full md:mt-24">
-          {/* <Box
-            className="rounded-full border border-white/70 px-3.5 py-1.5"
-            aria-live="polite"
-          >
-            <Text c="white" fw={500} style={{ fontSize: 13, letterSpacing: "0.04em" }}>
-              {counter}
-            </Text>
-          </Box> */}
-
-          <Group gap="sm">
-            <UnstyledButton
-              onClick={previous}
-              aria-label="Previous slide"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition hover:bg-white/35"
-            >
-              <ChevronLeftIcon />
-            </UnstyledButton>
-            <UnstyledButton
-              onClick={next}
-              aria-label="Next slide"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition hover:bg-white/35"
-            >
-              <ChevronRightIcon />
-            </UnstyledButton>
-          </Group>
-        </Group>
       </Box>
+
+      <Group
+        justify="space-between"
+        align="center"
+        className="absolute inset-x-0 bottom-0 z-20 px-5 pb-8 sm:px-8 md:px-12 md:pb-10 lg:px-16 xl:px-20"
+      >
+        <Box
+          className="rounded-full border border-white/70 px-3.5 py-1.5"
+          aria-live="polite"
+        >
+          <Text c="white" fw={500} style={{ fontSize: 13, letterSpacing: "0.04em" }}>
+            {counter}
+          </Text>
+        </Box>
+
+        <Group gap="sm">
+          <UnstyledButton
+            onClick={previous}
+            aria-label="Previous slide"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition hover:bg-white/35"
+          >
+            <ChevronLeftIcon />
+          </UnstyledButton>
+          <UnstyledButton
+            onClick={next}
+            aria-label="Next slide"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition hover:bg-white/35"
+          >
+            <ChevronRightIcon />
+          </UnstyledButton>
+        </Group>
+      </Group>
     </Box>
   );
 }
